@@ -29,10 +29,11 @@ public class HomePage extends base {
         driver.get(prop.getProperty("url"));
         LandingPage l = new LandingPage(driver);
         LoginPage lp = new LoginPage(driver);
+        l.getLogin().click();
         lp.getEmail().sendKeys(username);
         lp.getPassword().sendKeys(password);
         Log.info(text);
-        l.getLogin().click();
+        lp.getLogin().click();
 
         /*
         ForgotPassword fp = lp.forgotPassword();
