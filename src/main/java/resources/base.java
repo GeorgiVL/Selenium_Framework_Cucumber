@@ -20,7 +20,8 @@ public class base {
     public Properties prop;
     public WebDriver initializeDriver() throws IOException {
         prop = new Properties();
-        FileInputStream fis = new FileInputStream("C://Users//Valka//Academy//src//main//java//resources//data.properties");
+        String projectPath = System.getProperty("user.dir");
+        FileInputStream fis = new FileInputStream(projectPath + "//src//main//java//resources//data.properties");
 
         prop.load(fis);
         // Goes in the properties file and the value stored there will be printed
