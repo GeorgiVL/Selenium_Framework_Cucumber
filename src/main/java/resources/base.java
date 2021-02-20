@@ -5,6 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -30,7 +31,9 @@ public class base {
         if(browserName.equals("chrome")) {
             // execute in chrome driver
             System.setProperty("webdriver.chrome.driver", "D://Selenium//chromedriver.exe");
-            driver = new ChromeDriver();
+            ChromeOptions opt = new ChromeOptions();
+            opt.addArguments("headless");
+            driver = new ChromeDriver(opt);
 
         } else if (browserName.equals("firefox")) {
             System.setProperty("webdriver.gecko.driver", "D://Selenium//geckodriver.exe");
